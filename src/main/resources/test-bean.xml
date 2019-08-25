@@ -1,0 +1,32 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:batch="http://www.springframework.org/schema/batch" xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+   
+   <context:property-placeholder location="classpath:application.properties" />
+
+
+   <bean id = "getRates" class = " com.example.test01.model.Rates">
+   <!-- java.util.Map -->
+		<property name="mapRates">
+			<map>
+			<!-- 
+				<entry key="MYR" value="11" />
+				<entry key="HKD" value="22" />
+				<entry key="EUR" value="33" />
+				 -->
+		    <entry key="SGD" value="${SGD}" />
+		    <entry key="USD" value="${USD}" />
+			<entry key="MYR" value="${MYR}" />
+			<entry key="HKD" value="${HKD}" />
+			<entry key="EUR" value="${EUR}" /> 
+			</map>
+		</property>
+    </bean>
+   
+</beans>
